@@ -1,0 +1,146 @@
+/* ========================
+====== general style ======
+=========================== */
+:root {
+  font-family: "Kumbh Sans", Arial, Helvetica, sans-serif;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  /* text  */
+  --text1: hsl(237, 12%, 33%);
+  --text2: hsl(240, 6%, 50%);
+  --text3: hsl(238, 29%, 16%);
+  --text4: hsl(14, 88%, 65%);
+  --divider-line: hsl(240, 5%, 91%);
+  /* background gradient */
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  font-weight: 400;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    var(--soft-violet) 10%,
+    var(--soft-blue) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main {
+  align-items: center;
+  width: 60vw;
+  background-color: rgb(255, 255, 255);
+  padding: 50px 50px 50px 0;
+  border-radius: 20px;
+  position: relative;
+  background: rgb(255, 255, 255) url("images/bg-pattern-desktop.svg") no-repeat;
+  background-position: -15% 0%;
+  background-size: contain;
+}
+main > div:first-child {
+  overflow-x: hidden;
+  width: 700px;
+}
+main::before {
+  content: url("images/illustration-box-desktop.svg");
+  position: absolute;
+  left: -100px;
+  top: 37%;
+  z-index: 2;
+}
+main > div:first-child img {
+  width: 400px;
+  position: relative;
+  right: 50px;
+  z-index: 1;
+}
+button {
+  border: unset;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--text1);
+}
+button:hover {
+  color: var(--text4);
+  cursor: pointer;
+}
+main > div:last-child > div {
+  border-bottom: 1px solid var(--divider-line);
+  padding: 20px 0;
+}
+main > div:last-child {
+  width: 60%;
+}
+button + p {
+  display: none;
+  color: var(--text2);
+}
+/* ========================
+====== medium device ======
+=========================== */
+@media (max-width: 750px) {
+  main {
+    background-position: 10% 50%;
+    padding: 10px;
+    padding-left: 0;
+  }
+  main > div:first-child img {
+    width: 300px;
+  }
+  main::before {
+    transform: scale(0.6);
+  }
+  main > div:last-child {
+    width: 80%;
+  }
+}
+/* ========================
+========== mobile =========
+=========================== */
+@media (max-width: 375px) {
+  main.flex-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 280px;
+    background-position: 50% -30%;
+    background-size: 200px;
+  }
+  main::before {
+    left: -35px;
+    top: -75px;
+    transform: scale(0.5);
+  }
+  main > div:first-child img {
+    width: 200px;
+    position: relative;
+    right: unset;
+    top: -80px;
+    width: 100%;
+  }
+  main > div:first-child {
+    width: 80%;
+    overflow: visible;
+  }
+  main > div:last-child {
+    width: 100%;
+    padding: 5px 0;
+  }
+}
