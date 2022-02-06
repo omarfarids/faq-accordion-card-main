@@ -8,7 +8,6 @@ let down = false;
 let list = document.querySelectorAll("button");
 list.forEach(element => {
     element.addEventListener("click",()=>{
-        console.log(element.className)
         if(down === false){
         document.getElementById(element.className).style.cssText =
         "display:block;margin-top:10px";

@@ -143,4 +143,7 @@ button + p {
     width: 100%;
     padding: 5px 0;
   }
+  main > div:last-child h1 {
+    text-align: center;
+  }
 }
